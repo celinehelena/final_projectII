@@ -6,7 +6,7 @@ Este repositório contém um script Python para carregar e analisar grafos no fo
 
 * `aed2.py`: O código principal para a análise da rede.
 * `final_netwokr.gexf`: O arquivo de grafo GEXF que é analisado.
-* `network_analysis_results_YYYYMMDD_HHMMSS/`: Uma pasta gerada automaticamente a cada execução, contendo todos os gráficos resultantes.
+* `network_analysis_results_20250718_190609`: Uma pasta gerada automaticamente a cada execução, contendo todos os gráficos resultantes.
 
 ### Gráficos Gerados e Suas Explicações
 
@@ -18,7 +18,7 @@ A seguir, uma explicação detalhada de cada tipo de gráfico gerado pelo script
 
 ![Degree Distribution (PDF)](network_analysis_results_20250718_190609/degree_distribution_pdf.png)
 
-Este gráfico (exemplo: `degree_distribution_pdf.png`) exibe a distribuição dos graus dos nós na rede. O grau de um nó é o número de conexões (arestas) que ele possui.
+Este gráfico exibe a distribuição dos graus dos nós na rede. O grau de um nó é o número de conexões (arestas) que ele possui.
 
 * **Barras Azuis (Count)**: Representam um **histograma** da frequência dos graus. A altura de cada barra indica quantos nós na rede têm aquele grau específico. Por exemplo, a barra mais alta em torno do grau 1 ou 2 indica que a maioria dos nós na rede tem 1 ou 2 conexões.
 * **Linha Vermelha (Probability Density Function - PDF)**: Esta curva é uma **Estimativa de Densidade de Kernel (KDE)**. Ela fornece uma representação suave e contínua da distribuição subjacente dos graus. A PDF ajuda a visualizar a forma geral da distribuição de probabilidade dos graus, mesmo que os graus sejam valores discretos. Picos na curva indicam graus mais comuns, enquanto caudas mais longas mostram a presença de alguns nós com muitos vizinhos (hubs).
@@ -29,7 +29,7 @@ Este gráfico (exemplo: `degree_distribution_pdf.png`) exibe a distribuição do
 
 ![Cumulative Distribution Function (CDF)](network_analysis_results_20250718_190609/degree_distribution_cdf.png)
 
-Este gráfico (exemplo: `degree_distribution_cdf.png`) mostra a Função de Distribuição Cumulativa dos graus da rede.
+Este gráfico mostra a Função de Distribuição Cumulativa dos graus da rede.
 
 * **Barras Azuis (Count)**: Similar ao gráfico PDF, estas barras representam o histograma da contagem de graus.
 * **Linha Vermelha (Cumulative Density Function - CDF)**: Esta curva mostra a **probabilidade acumulada** de um nó ter um grau menor ou igual a um determinado valor. Para dados discretos, como os graus de nós, a CDF é **naturalmente uma "escada"**. Cada "degrau" indica um salto na probabilidade acumulada quando um novo valor de grau é incluído na contagem. Por exemplo, o valor da CDF em grau `k` indica a proporção de nós que têm `k` ou menos conexões. A curva sempre varia de 0 a 1 (ou 0% a 100%).
@@ -40,7 +40,7 @@ Este gráfico (exemplo: `degree_distribution_cdf.png`) mostra a Função de Dist
 
 ![Multivariate Centrality Analysis](network_analysis_results_20250718_190609/multivariate_centrality_analysis.png)
 
-Este gráfico (exemplo: `multivariate_centrality_analysis.png`) é uma matriz de gráficos que permite visualizar as relações e distribuições entre várias métricas de centralidade da rede. As métricas de centralidade avaliam a "importância" ou "influência" de um nó dentro do grafo. As métricas usadas são: **Betweenness (Intermediação)**, **Degree (Grau)**, **Eigenvector (Autovetor)** e **Closeness (Proximidade)**.
+Este gráfico é uma matriz de gráficos que permite visualizar as relações e distribuições entre várias métricas de centralidade da rede. As métricas de centralidade avaliam a "importância" ou "influência" de um nó dentro do grafo. As métricas usadas são: **Betweenness (Intermediação)**, **Degree (Grau)**, **Eigenvector (Autovetor)** e **Closeness (Proximidade)**.
 
 * **Diagonal (Histogramas/Densidade de KDE)**: Os gráficos na diagonal da matriz mostram a **distribuição individual** de cada métrica de centralidade. Semelhante à PDF do grau, eles usam histogramas e curvas de densidade (KDE) para ilustrar como os valores de cada métrica estão distribuídos entre os nós da rede. É comum observar distribuições assimétricas, com muitos nós tendo baixa centralidade e poucos sendo altamente centrais.
 * **Fora da Diagonal (Gráficos de Dispersão com Elipses de Densidade)**: Cada gráfico fora da diagonal é um **gráfico de dispersão** que mostra a relação entre duas métricas de centralidade diferentes.
@@ -53,7 +53,7 @@ Este gráfico (exemplo: `multivariate_centrality_analysis.png`) é uma matriz de
 
 ![Network Centrality Visualization](network_analysis_results_20250718_190609/network_centrality_visualization.png)
 
-Este gráfico (exemplo: `network_centrality_visualization.png`) é uma representação visual da rede, onde os nós são coloridos e dimensionados com base em sua centralidade combinada.
+Este gráfico é uma representação visual da rede, onde os nós são coloridos e dimensionados com base em sua centralidade combinada.
 
 * **Nós Vermelhos (Grandes)**: Representam os **Nós Centrais** da rede. São os nós que possuem os maiores valores nas métricas de centralidade, indicando que são os mais importantes ou influentes.
 * **Nós Azuis (Médios)**: Representam os **Nós Periféricos** da rede. São os nós com os menores valores nas métricas de centralidade combinadas, localizados nas "bordas" ou com menor influência na estrutura geral.
