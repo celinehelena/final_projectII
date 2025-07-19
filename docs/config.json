@@ -1,0 +1,53 @@
+{
+  "type": "network",
+  "version": "1.0",
+  "data": "data.json",
+  "logo": {
+    "file": "",
+    "link": "",
+    "text": "Gustavo "
+  },
+  "text": {
+    "more": "Esta visualização interativa representa a rede de contatos da Proteína Precursora Amiloide (APP). Cada nó é um resíduo de aminoácido e cada aresta simboliza uma interação não-covalente que estabiliza sua estrutura tridimensional, cuja clivagem anormal está associada à Doença de Alzheimer.",
+    "intro": "Visualização interativa representa a rede de contatos da Proteína Precursora Amiloide (APP).",
+    "title": "Rede de Contatos da Proteína APP"
+  },
+  "legend": {
+    "edgeLabel": "Interações Inter-residuais",
+    "colorLabel": "Community",
+    "nodeLabel": "Resíduos de Aminoácidos"
+  },
+  "features": {
+    "search": true,
+    "groupSelectorAttribute": "Modularity Class",
+    "hoverBehavior": "dim"
+  },
+  "informationPanel": {
+    "groupByEdgeDirection": false,
+    "imageAttribute": "Degree"
+  },
+  "sigma": {
+    "drawingProperties": {
+      "defaultEdgeType": "curve",
+      "defaultHoverLabelBGColor": "#002147",
+      "defaultLabelBGColor": "#ddd",
+      "activeFontStyle": "bold",
+      "defaultLabelColor": "#000",
+      "labelThreshold": 10,
+      "defaultLabelHoverColor": "#fff",
+      "fontStyle": "bold",
+      "hoverFontStyle": "bold",
+      "defaultLabelSize": 14
+    },
+    "graphProperties": {
+      "maxEdgeSize": 0.5,
+      "minEdgeSize": 0.2,
+      "minNodeSize": 1,
+      "maxNodeSize": 7
+    },
+    "mouseProperties": {
+      "maxRatio": 20,
+      "minRatio": 0.75
+    }
+  }
+}
