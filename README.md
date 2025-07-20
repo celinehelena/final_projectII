@@ -68,16 +68,15 @@ A Centralidade de Grau (Degree) é a medida mais simples e conta o número de in
 A Centralidade de Proximidade (Closeness) mede o quão "próximo" um nó está, em média, de todos os outros nós da rede. Um nó com alta proximidade pode alcançar todos os outros rapidamente. O padrão é mais difuso, mas ainda mostra regiões claras. Há vários "patches" de nós roxos (alta proximidade).
 
 **Interpretação Biológica:**
-* Os nós vermelhos estão no "centro geográfico" da estrutura. Eles estão na melhor posição para transmitir rapidamente um sinal ou uma mudança conformacional para toda a molécula.
-* A grande região mais "fria" (azul/verde) pode representar um domínio funcionalmente distinto, uma cauda terminal flexível ou uma região que não precisa se comunicar de forma eficiente com o resto da proteína, talvez por ter uma função mais localizada ou por se projetar para fora da estrutura principal.
-
+* os nós laranjas, mais numerosos e concentrados nas bordas da estrutura, apresentam baixa centralidade de proximidade. Eles estão localizados em regiões mais periféricas e, portanto, menos eficientes na comunicação com o restante da rede
+* Os nós roxos, localizados de forma dispersa mas estrategicamente posicionados na rede, apresentam alta centralidade de proximidade. Isso significa que esses nós estão em posições ideais para alcançar rapidamente os demais nós da rede, o que os torna essenciais para a eficiência na propagação de informações e no fortalecimento da conectividade global
 <div align="center">
   <img src="img/grafico_closeness.png" alt="Gráfico 2 - Closeness Centrality" width="600">
   <p><strong>Figura 2:</strong> Closeness Centrality.</p>
 </div>
 
 #### Centralidade de Intermediação (Betweenness Centrality)
-A Centralidade de Intermediação (Betweenness) mede a frequência com que um nó atua como uma "ponte" no caminho mais curto entre outros dois nós. O padrão aqui é drasticamente diferente. Vemos caminhos ou trilhas lineares de nós vermelhos e amarelos. A importância não está espalhada, mas sim concentrada em rotas específicas, passando pelos nós cinza.
+A Centralidade de Intermediação (Betweenness) mede a frequência com que um nó atua como uma "ponte" no caminho mais curto entre outros dois nós. O padrão aqui é drasticamente diferente. Vemos caminhos ou trilhas lineares de nós rosas e vermelhos. A importância não está espalhada, mas sim concentrada em rotas específicas, passando pelos nós cinza.
 
 **Interpretação Biológica:**
 * Os nós cinza são extremamente importantes. Eles representam as rotas de comunicação e de transmissão de estresse mecânico através da proteína. Se uma parte da proteína sofre uma mudança conformacional (por exemplo, ao se ligar a outra molécula), a informação dessa mudança provavelmente se propaga através desses resíduos-ponte.
