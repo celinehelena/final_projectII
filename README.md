@@ -59,7 +59,10 @@ A Centralidade de Grau (Degree) é a medida mais simples e conta o número de in
 * Os nós vermelhos (alto grau) são os "hubs" de interação local. Eles são os resíduos que formam o maior número de contatos com seus vizinhos imediatos. Estruturalmente, são cruciais para a estabilidade de elementos secundários, agindo como "âncoras" que mantêm a conformação local coesa.
 * Os nós azuis (baixo grau), especialmente no núcleo denso do layout, podem representar resíduos em alças (loops) mais flexíveis ou na superfície da proteína, que possuem menos restrições estruturais e menos contatos com o resto da estrutura.
 
-<img src="img/DegCen.png" alt="Grafo de Centralidade de Grau" width="600"/>
+<div align="center">
+  <img src="img/DegCen.png" alt="Gráfico 1 - Degree Centrality" width="600">
+  <p><strong>Figura 1:</strong> Degree Centrality.</p>
+</div>
 
 #### Centralidade de Proximidade (Closeness Centrality)
 A Centralidade de Proximidade (Closeness) mede o quão "próximo" um nó está, em média, de todos os outros nós da rede. Um nó com alta proximidade pode alcançar todos os outros rapidamente. O padrão é mais difuso, mas ainda mostra regiões claras. Há vários "patches" de nós vermelhos (alta proximidade). Notavelmente, há uma grande área azul/verde na parte inferior direita, indicando nós que estão "distantes" do resto da rede.
@@ -68,7 +71,10 @@ A Centralidade de Proximidade (Closeness) mede o quão "próximo" um nó está, 
 * Os nós vermelhos estão no "centro geográfico" da estrutura. Eles estão na melhor posição para transmitir rapidamente um sinal ou uma mudança conformacional para toda a molécula.
 * A grande região mais "fria" (azul/verde) pode representar um domínio funcionalmente distinto, uma cauda terminal flexível ou uma região que não precisa se comunicar de forma eficiente com o resto da proteína, talvez por ter uma função mais localizada ou por se projetar para fora da estrutura principal.
 
-<img src="img/CloCen.png" alt="Grafo de Centralidade de Proximidade" width="600"/>
+<div align="center">
+  <img src="img/CloCen.png" alt="Gráfico 2 - Closeness Centrality" width="600">
+  <p><strong>Figura 2:</strong> Closeness Centrality.</p>
+</div>
 
 #### Centralidade de Intermediação (Betweenness Centrality)
 A Centralidade de Intermediação (Betweenness) mede a frequência com que um nó atua como uma "ponte" no caminho mais curto entre outros dois nós. O padrão aqui é drasticamente diferente. Vemos caminhos ou trilhas lineares de nós vermelhos e amarelos. A importância não está espalhada, mas sim concentrada em rotas específicas.
@@ -77,7 +83,10 @@ A Centralidade de Intermediação (Betweenness) mede a frequência com que um n�
 * Estes caminhos vermelhos são extremamente importantes. Eles representam as rotas de comunicação e de transmissão de estresse mecânico através da proteína. Se uma parte da proteína sofre uma mudança conformacional (por exemplo, ao se ligar a outra molécula), a informação dessa mudança provavelmente se propaga através desses resíduos-ponte.
 * Esses nós são "gargalos" estruturais. Uma mutação em um único resíduo de alta intermediação pode interromper essa comunicação, desestabilizando a proteína de forma muito mais dramática do que uma mutação em um nó de alto grau, mas baixa intermediação.
 
-<img src="img/BetCen.png" alt="Grafo de Centralidade de Intermediação" width="600"/>
+<div align="center">
+  <img src="img/BetCen.png" alt="Gráfico 3 - Betweenness Centrality" width="600">
+  <p><strong>Figura 3:</strong> Betweenness Centrality.</p>
+</div>
 
 #### Centralidade de Autovetor (Eigenvector Centrality)
 A Centralidade de Autovetor (Eigenvector) mede a "influência" de um nó. Um nó é considerado importante se está conectado a outros nós que também são importantes. Visualmente, assim como a intermediação, a centralidade de autovetor está altamente localizada em "hotspots". Vemos alguns aglomerados específicos de nós vermelhos e amarelos, com um cluster de alta influência particularmente forte no lado esquerdo do gráfico.
@@ -86,11 +95,17 @@ A Centralidade de Autovetor (Eigenvector) mede a "influência" de um nó. Um nó
 * Os clusters vermelhos representam os núcleos de estabilidade da proteína. São "bairros influentes" onde a estabilidade de cada resíduo reforça a estabilidade dos seus vizinhos. Esses locais são provavelmente as partes mais rígidas e bem dobradas da estrutura.
 * O hotspot mais proeminente (à esquerda) provavelmente corresponde ao principal núcleo hidrofóbico ou ao centro funcional mais crítico do domínio proteico analisado. Qualquer perturbação nesta região teria um efeito cascata, desestabilizando grandes porções da proteína.
 
-<img src="img/EigCen.png" alt="Grafo de Centralidade de Autovetor" width="600"/>
+<div align="center">
+  <img src="img/EigCen.png" alt="Gráfico 4 - Eigenvector Centrality" width="600">
+  <p><strong>Figura 4:</strong> Eigenvector Centrality.</p>
+</div>
 
 ### Requisito #02: Análise de K-core e K-shell
 
-<img src="img/Kcore2.png" alt="Grafo de K-core e K-shell" width="600"/>
+<div align="center">
+  <img src="img/Kcore2.png" alt="Gráfico 5 - K-core" width="600">
+  <p><strong>Figura 5:</strong> K-core e K-shell.</p>
+</div>
 
 O gráfico gerado representa a estrutura da rede em termos de k-core e k-shell, sendo o k-core a região central mais conectada e o k-shell, as camadas periféricas. Os nós vermelhos fazem parte do 3-core, ou seja, pertencem a um subgrafo onde todos os nós têm pelo menos 3 conexões dentro do próprio núcleo, sendo assim um centro mais coeso e resiliente. Ao mesmo tempo, os nós azuis representam o 2-shell, ou seja, pertencem ao 2-core, mas não ao 3-core, sendo uma casca intermediária da rede, conectados de forma menos densa. Por fim, os nós pretos foram removidos nas etapas anteriores da decomposição e representam a periferia da rede. Essa análise nos permite identificar os nós mais relevantes e estruturalmente mais importantes.
 
@@ -98,7 +113,10 @@ No contexto da proteína, é possível identificar uma rede com muitos nós com 
 
 ### Requisito #03: Análise de CDF, PDF e análise multivariável das métricas de centralidade
 
-<img src="img/PDF.png" alt="Gráfico de PDF da Distribuição de Graus" width="600"/>
+<div align="center">
+  <img src="img/degree_pdf.png" alt="Gráfico 6 - Gráfico de PDF da Distribuição de Graus" width="600">
+  <p><strong>Figura 6:</strong> Gráfico de PDF da Distribuição de Graus.</p>
+</div>
 
 Este gráfico exibe a distribuição dos graus dos nós na rede. O grau de um nó é o número de conexões (arestas) que ele possui.
 * **Barras Azuis (Count):** Representam um histograma da frequência dos graus. A altura de cada barra indica quantos nós na rede têm aquele grau específico. Por exemplo, a barra mais alta em torno do grau 1 ou 2 indica que a maioria dos nós na rede tem 1 ou 2 conexões.
@@ -108,7 +126,10 @@ A análise da PDF nos permite identificar os resíduos nos extremos da conectivi
 * **Extremo Inferior (Grau 0-1):** Estes são os resíduos menos conectados da rede. Estruturalmente, são resíduos mais isolados, que podem ser parte de alças (loops) flexíveis na superfície da proteína.
 * **Extremo Superior (Grau > 5):** Estes são os vértices na "cauda longa" da distribuição. Embora sejam poucos, eles são os "hubs" locais da rede, fundamentais para a estabilidade local da proteína.
 
-<img src="img/CDF.png" alt="Gráfico de CDF da Distribuição de Graus" width="600"/>
+<div align="center">
+  <img src="img/degree_cdf.png" alt="Gráfico 7 - Gráfico de CDF da Distribuição de Graus" width="600">
+  <p><strong>Figura 7:</strong> Gráfico de CDF da Distribuição de Graus.</p>
+</div>
 
 Este gráfico mostra a Função de Distribuição Cumulativa (CDF) dos graus da rede.
 * **Barras Azuis (Count):** Similar ao gráfico PDF, estas barras representam o histograma da contagem de graus.
@@ -119,7 +140,10 @@ A análise da CDF nos mostra a concentração da conectividade:
 * **50% da rede (Mediana):** É necessário incluir os vértices com grau até 2. Metade de todos os resíduos possui 2 ou menos interações.
 * **75% da rede:** É necessário incluir os vértices com grau até 3. Isso mostra que três quartos da rede são compostos por resíduos com poucas conexões.
 
-<img src="img/Centrality_metrics.png" alt="Matriz de Gráficos de Dispersão das Métricas de Centralidade" width="600"/>
+<div align="center">
+  <img src="img/pairgrid_metrics.png" alt="Gráfico 8 - Matriz de Gráficos de Dispersão das Métricas de Centralidade" width="600">
+  <p><strong>Figura 8:</strong> Matriz de Gráficos de Dispersão das Métricas de Centralidade.</p>
+</div>
 
 Este gráfico é uma matriz que permite visualizar as relações entre as métricas de centralidade: Betweenness (Intermediação), Degree (Grau), Eigenvector (Autovetor) e Closeness (Proximidade).
 * **Diagonal (Histogramas):** Mostram a distribuição individual de cada métrica.
@@ -139,6 +163,9 @@ A figura a seguir ilustra a página HTML exportada pelo Gephi, com suporte à na
 
 Ao analisar o gráfico, é perceptível que a rede possui múltiplas comunidades distintas, evidenciado pela diversidade de cores. A divisão em cores compactas indica uma separação coesa entre os grupos, sugerindo que a rede não é homogênea, mas sim composta por subestruturas bem definidas.
 
-<img src="img/page.png" alt="Página HTML interativa gerada pelo Gephi" width="600"/>
+<div align="center">
+  <img src="img/page.png" alt="Gráfico 9 - HTML page" width="600">
+  <p><strong>Figura 9:</strong> Página HTML interativa gerada pelo Gephi.</p>
+</div>
 
-**Link para a página:** (LINK)
+**Link para a página:** ([LINK](https://celinehelena.github.io/final_projectII))
