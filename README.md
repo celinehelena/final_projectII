@@ -53,26 +53,26 @@ O repositório contém todos os arquivos e códigos utilizados, além de todas a
 A análise de centralidade em redes nos permite identificar os nós mais importantes ou influentes dentro de uma estrutura, sob diferentes perspectivas. Ao examinarmos os grafos apresentados, podemos observar as nuances de quatro métricas-chave: Grau (Degree), Proximidade (Closeness), Intermediação (Betweenness) e Autovetor (Eigenvector).
 
 #### Centralidade de Grau (Degree Centrality)
-A Centralidade de Grau (Degree) é a medida mais simples e conta o número de interações diretas (arestas) que um resíduo (nó) possui. Os nós com grau mais alto (em vermelho e amarelo) estão distribuídos principalmente no anel externo do layout. O centro do gráfico é densamente povoado por nós azuis (baixo grau).
+A Centralidade de Grau (Degree) é a medida mais simples e conta o número de interações diretas (arestas) que um resíduo (nó) possui. Os nós com grau mais alto (em azul e amarelo) estão distribuídos principalmente no anel externo do layout. O centro do gráfico é densamente povoado por nós vermelhos (baixo grau).
 
 **Interpretação Biológica:**
-* Os nós vermelhos (alto grau) são os "hubs" de interação local. Eles são os resíduos que formam o maior número de contatos com seus vizinhos imediatos. Estruturalmente, são cruciais para a estabilidade de elementos secundários, agindo como "âncoras" que mantêm a conformação local coesa.
-* Os nós azuis (baixo grau), especialmente no núcleo denso do layout, podem representar resíduos em alças (loops) mais flexíveis ou na superfície da proteína, que possuem menos restrições estruturais e menos contatos com o resto da estrutura.
+* Os nós azuis (alto grau) são os "hubs" de interação local. Eles são os resíduos que formam o maior número de contatos com seus vizinhos imediatos. Estruturalmente, são cruciais para a estabilidade de elementos secundários, agindo como "âncoras" que mantêm a conformação local coesa.
+* Os nós vermelhos (baixo grau), especialmente no núcleo denso do layout, podem representar resíduos em alças (loops) mais flexíveis ou na superfície da proteína, que possuem menos restrições estruturais e menos contatos com o resto da estrutura.
 
 <div align="center">
-  <img src="img/DegCen.png" alt="Gráfico 1 - Degree Centrality" width="600">
+  <img src="img/grafico_degree.png" alt="Gráfico 1 - Degree Centrality" width="600">
   <p><strong>Figura 1:</strong> Degree Centrality.</p>
 </div>
 
 #### Centralidade de Proximidade (Closeness Centrality)
-A Centralidade de Proximidade (Closeness) mede o quão "próximo" um nó está, em média, de todos os outros nós da rede. Um nó com alta proximidade pode alcançar todos os outros rapidamente. O padrão é mais difuso, mas ainda mostra regiões claras. Há vários "patches" de nós vermelhos (alta proximidade). Notavelmente, há uma grande área azul/verde na parte inferior direita, indicando nós que estão "distantes" do resto da rede.
+A Centralidade de Proximidade (Closeness) mede o quão "próximo" um nó está, em média, de todos os outros nós da rede. Um nó com alta proximidade pode alcançar todos os outros rapidamente. O padrão é mais difuso, mas ainda mostra regiões claras. Há vários "patches" de nós roxos (alta proximidade). Notavelmente, há uma grande área laranja na parte inferior direita, indicando nós que estão "distantes" do resto da rede.
 
 **Interpretação Biológica:**
 * Os nós vermelhos estão no "centro geográfico" da estrutura. Eles estão na melhor posição para transmitir rapidamente um sinal ou uma mudança conformacional para toda a molécula.
 * A grande região mais "fria" (azul/verde) pode representar um domínio funcionalmente distinto, uma cauda terminal flexível ou uma região que não precisa se comunicar de forma eficiente com o resto da proteína, talvez por ter uma função mais localizada ou por se projetar para fora da estrutura principal.
 
 <div align="center">
-  <img src="img/CloCen.png" alt="Gráfico 2 - Closeness Centrality" width="600">
+  <img src="img/grafico_closeness.png" alt="Gráfico 2 - Closeness Centrality" width="600">
   <p><strong>Figura 2:</strong> Closeness Centrality.</p>
 </div>
 
@@ -84,7 +84,7 @@ A Centralidade de Intermediação (Betweenness) mede a frequência com que um n�
 * Esses nós são "gargalos" estruturais. Uma mutação em um único resíduo de alta intermediação pode interromper essa comunicação, desestabilizando a proteína de forma muito mais dramática do que uma mutação em um nó de alto grau, mas baixa intermediação.
 
 <div align="center">
-  <img src="img/BetCen.png" alt="Gráfico 3 - Betweenness Centrality" width="600">
+  <img src="img/grafico_betweenness.png" alt="Gráfico 3 - Betweenness Centrality" width="600">
   <p><strong>Figura 3:</strong> Betweenness Centrality.</p>
 </div>
 
@@ -96,7 +96,7 @@ A Centralidade de Autovetor (Eigenvector) mede a "influência" de um nó. Um nó
 * O hotspot mais proeminente (à esquerda) provavelmente corresponde ao principal núcleo hidrofóbico ou ao centro funcional mais crítico do domínio proteico analisado. Qualquer perturbação nesta região teria um efeito cascata, desestabilizando grandes porções da proteína.
 
 <div align="center">
-  <img src="img/EigCen.png" alt="Gráfico 4 - Eigenvector Centrality" width="600">
+  <img src="img/grafico_eigenvector.png" alt="Gráfico 4 - Eigenvector Centrality" width="600">
   <p><strong>Figura 4:</strong> Eigenvector Centrality.</p>
 </div>
 
