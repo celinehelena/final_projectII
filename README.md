@@ -65,7 +65,7 @@ A Centralidade de Grau (Degree) é a medida mais simples e conta o número de in
 </div>
 
 #### Centralidade de Proximidade (Closeness Centrality)
-A Centralidade de Proximidade (Closeness) mede o quão "próximo" um nó está, em média, de todos os outros nós da rede. Um nó com alta proximidade pode alcançar todos os outros rapidamente. O padrão é mais difuso, mas ainda mostra regiões claras. Há vários "patches" de nós roxos (alta proximidade). Notavelmente, há uma grande área laranja na parte inferior direita, indicando nós que estão "distantes" do resto da rede.
+A Centralidade de Proximidade (Closeness) mede o quão "próximo" um nó está, em média, de todos os outros nós da rede. Um nó com alta proximidade pode alcançar todos os outros rapidamente. O padrão é mais difuso, mas ainda mostra regiões claras. Há vários "patches" de nós roxos (alta proximidade).
 
 **Interpretação Biológica:**
 * Os nós vermelhos estão no "centro geográfico" da estrutura. Eles estão na melhor posição para transmitir rapidamente um sinal ou uma mudança conformacional para toda a molécula.
@@ -77,10 +77,10 @@ A Centralidade de Proximidade (Closeness) mede o quão "próximo" um nó está, 
 </div>
 
 #### Centralidade de Intermediação (Betweenness Centrality)
-A Centralidade de Intermediação (Betweenness) mede a frequência com que um nó atua como uma "ponte" no caminho mais curto entre outros dois nós. O padrão aqui é drasticamente diferente. Vemos caminhos ou trilhas lineares de nós vermelhos e amarelos. A importância não está espalhada, mas sim concentrada em rotas específicas.
+A Centralidade de Intermediação (Betweenness) mede a frequência com que um nó atua como uma "ponte" no caminho mais curto entre outros dois nós. O padrão aqui é drasticamente diferente. Vemos caminhos ou trilhas lineares de nós vermelhos e amarelos. A importância não está espalhada, mas sim concentrada em rotas específicas, passando pelos nós cinza.
 
 **Interpretação Biológica:**
-* Estes caminhos vermelhos são extremamente importantes. Eles representam as rotas de comunicação e de transmissão de estresse mecânico através da proteína. Se uma parte da proteína sofre uma mudança conformacional (por exemplo, ao se ligar a outra molécula), a informação dessa mudança provavelmente se propaga através desses resíduos-ponte.
+* Os nós cinza são extremamente importantes. Eles representam as rotas de comunicação e de transmissão de estresse mecânico através da proteína. Se uma parte da proteína sofre uma mudança conformacional (por exemplo, ao se ligar a outra molécula), a informação dessa mudança provavelmente se propaga através desses resíduos-ponte.
 * Esses nós são "gargalos" estruturais. Uma mutação em um único resíduo de alta intermediação pode interromper essa comunicação, desestabilizando a proteína de forma muito mais dramática do que uma mutação em um nó de alto grau, mas baixa intermediação.
 
 <div align="center">
@@ -89,11 +89,11 @@ A Centralidade de Intermediação (Betweenness) mede a frequência com que um n�
 </div>
 
 #### Centralidade de Autovetor (Eigenvector Centrality)
-A Centralidade de Autovetor (Eigenvector) mede a "influência" de um nó. Um nó é considerado importante se está conectado a outros nós que também são importantes. Visualmente, assim como a intermediação, a centralidade de autovetor está altamente localizada em "hotspots". Vemos alguns aglomerados específicos de nós vermelhos e amarelos, com um cluster de alta influência particularmente forte no lado esquerdo do gráfico.
+A Centralidade de Autovetor (Eigenvector) mede a "influência" de um nó. Um nó é considerado importante se está conectado a outros nós que também são importantes. Visualmente, assim como a intermediação, a centralidade de autovetor está altamente localizada em "hotspots". Vemos alguns aglomerados específicos de nós vermelhos e amarelos, com um cluster de alta influência (azul) particularmente forte na parte de cima do gráfico.
 
 **Interpretação Biológica:**
-* Os clusters vermelhos representam os núcleos de estabilidade da proteína. São "bairros influentes" onde a estabilidade de cada resíduo reforça a estabilidade dos seus vizinhos. Esses locais são provavelmente as partes mais rígidas e bem dobradas da estrutura.
-* O hotspot mais proeminente (à esquerda) provavelmente corresponde ao principal núcleo hidrofóbico ou ao centro funcional mais crítico do domínio proteico analisado. Qualquer perturbação nesta região teria um efeito cascata, desestabilizando grandes porções da proteína.
+* Os clusters azuis representam os núcleos de estabilidade da proteína. São "bairros influentes" onde a estabilidade de cada resíduo reforça a estabilidade dos seus vizinhos. Esses locais são provavelmente as partes mais rígidas e bem dobradas da estrutura.
+* O hotspot mais proeminente (na parte de cima) provavelmente corresponde ao principal núcleo hidrofóbico ou ao centro funcional mais crítico do domínio proteico analisado. Qualquer perturbação nesta região teria um efeito cascata, desestabilizando grandes porções da proteína.
 
 <div align="center">
   <img src="img/grafico_eigenvector.png" alt="Gráfico 4 - Eigenvector Centrality" width="600">
